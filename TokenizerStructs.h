@@ -11,6 +11,8 @@
 #include <string.h>
 
 enum Type{
+    INT_TYPE,
+    CHAR_TYPE,
     INTEGER_CONSTANT,
     BAD_OCTAL,
     BAD_HEX,
@@ -122,6 +124,8 @@ enum Type{
 typedef enum Type Type;
 
 char *strEnums[] = {
+        "INT_TYPE",
+        "CHAR_TYPE",
         "INTEGER_CONSTANT",
         "BAD_OCTAL",
         "BAD_HEX",

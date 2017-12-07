@@ -35,14 +35,13 @@ Node* whileFunc();
 _Bool maintainSymbolTable(Token *token);
 
 
-int createParseTree(int argc, char *argv[]){
+void createParseTree(int argc, char *argv[]){
     initTokenizer(argc, argv);
     nextTk = nextToken();
     root = newInnerNode("<program>");
     root->firstChild = programFunc();
-    printTree(root);
-
-    return 0;
+//    printTree(root);
+//    return root;
 }
 
 Node* programFunc(){
@@ -56,9 +55,9 @@ Node* programFunc(){
     symbolTableCreated = 1;
 
     //Print symbol table and notification that parse tree will be printed. Tree is printed when complete.
-    printTable();
-    printf("Printing depth first search preorder traversal of parse tree. Nodes"
-                   " are listed as either Non-Terminals or Lexemes:\n\n");
+//    printTable();
+//    printf("Printing depth first search preorder traversal of parse tree. Nodes"
+//                   " are listed as either Non-Terminals or Lexemes:\n\n");
 
     if(inFirst(listOfStatementsRule, nextTk)){
         Node *listOfStateNode = newInnerNode("<listofstatements>");

@@ -17,8 +17,6 @@ void add(VariableArray *varArray, int value);
 void doubleArrayIfFull(VariableArray *varArray);
 int get(VariableArray *varArray, int index);
 
-typedef struct RuntimeStack RuntimeStack;
-
 struct VariableArray{
     int size;
     int capacity;
@@ -45,6 +43,15 @@ void add(VariableArray *varArray, int value){
     varArray->data[varArray->size++] = value;
 }
 
+void set(VariableArray *varArray, int index, int value){
+    if(index >= varArray->size || index < 0){
+        printf("Index %d out of bounds for vector of size %d\n", index, varArray->size);
+        exit(1);
+    }
+
+    varArray->data[index] = value;
+}
+
 void doubleArrayIfFull(VariableArray *varArray){
     if(varArray->size >= varArray->capacity){
         varArray->capacity *= 2;
@@ -61,5 +68,22 @@ int get(VariableArray *varArray, int index){
     return varArray->data[index];
 }
 
+//Not sure if gonna use yet:
+typedef struct RuntimeStack RuntimeStack;
+
+struct RuntimeStack{
+    int frame;
+    VariableArray *varArray;
+};
+
+RuntimeStack* runtimeStackInit(int frame){
+    VariableArray *varArray = varArrayInit();
+
+    RuntimeStack *stack = malloc(sizeof(RuntimeStack));
+    stack->frame = frame;
+    stack->varArray = varArray;
+
+    return stack;
+}
 
 #endif //ASSIGNMENT_7_COMPLETE_INTERPRETER_INTERPRETERSTRUCTS_H

@@ -110,17 +110,16 @@ Symbol* newSymbol(PotentialSymbol ps){
     symbol->offset = offset;
 
     if(symbol->type == INT_KEYWORD) {
-        symbol->type = INTEGER_CONSTANT;
-        offset += 4;
+        symbol->type = INT_TYPE;
     }
     else if(symbol->type == CHAR_KEYWORD){
-        symbol->type = CHAR_CONSTANT;
-        offset += 1;
+        symbol->type = CHAR_TYPE;
     }
     else{
         //bad symbol
         return NULL;
     }
+    offset++;
 
     return symbol;
 }
