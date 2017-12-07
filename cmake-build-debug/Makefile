@@ -123,32 +123,32 @@ Assignment_7___Complete_Interpreter/fast:
 	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/build
 .PHONY : Assignment_7___Complete_Interpreter/fast
 
-main.o: main.c.o
+Interpreter.o: Interpreter.c.o
 
-.PHONY : main.o
+.PHONY : Interpreter.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/main.c.o
-.PHONY : main.c.o
+Interpreter.c.o:
+	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o
+.PHONY : Interpreter.c.o
 
-main.i: main.c.i
+Interpreter.i: Interpreter.c.i
 
-.PHONY : main.i
+.PHONY : Interpreter.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/main.c.i
-.PHONY : main.c.i
+Interpreter.c.i:
+	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.i
+.PHONY : Interpreter.c.i
 
-main.s: main.c.s
+Interpreter.s: Interpreter.c.s
 
-.PHONY : main.s
+.PHONY : Interpreter.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/main.c.s
-.PHONY : main.c.s
+Interpreter.c.s:
+	$(MAKE) -f CMakeFiles/Assignment_7___Complete_Interpreter.dir/build.make CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.s
+.PHONY : Interpreter.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Assignment_7___Complete_Interpreter"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Interpreter.o"
+	@echo "... Interpreter.i"
+	@echo "... Interpreter.s"
 .PHONY : help
 
 

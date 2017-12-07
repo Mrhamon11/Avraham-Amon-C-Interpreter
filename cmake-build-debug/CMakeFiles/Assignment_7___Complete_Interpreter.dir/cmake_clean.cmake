@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Assignment_7___Complete_Interpreter.dir/main.c.o"
+  "CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o"
   "Assignment_7___Complete_Interpreter.pdb"
   "Assignment_7___Complete_Interpreter"
 )
