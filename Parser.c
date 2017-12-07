@@ -299,6 +299,11 @@ Node* whileFunc(){
     nextTk = nextToken();
     Node *exp = newInnerNode("<exp>");
 
+    if(!inFirst(expRule, nextTk)){
+        printf("Missing expression for condition in while loop!\n");
+        return NULL;
+    }
+
     whileNode->rightSibling = openParentNode;
     openParentNode->rightSibling = exp;
     exp->firstChild = expFunc();
@@ -324,7 +329,7 @@ Node *cinFunc(){
     nextTk = nextToken();
 
     if(nextTk->type != BIT_RIGHT){
-        printf("cin missing >> for operands!");
+        printf("cin missing >> for operands!\n");
         return NULL;
     }
     Node *bitRightNode = newLeafNode(nextTk);
@@ -336,9 +341,13 @@ Node *cinFunc(){
         lovaNode->firstChild = listOfVariableAngleFunc();
         bitRightNode->rightSibling = lovaNode;
     }
+    else{
+        printf("Missing variable on right hand side of cin statement!\n");
+        return NULL;
+    }
 
     if(nextTk->type != SEMI_COLON){
-        printf("cin statement must end with semi-colon!");
+        printf("cin statement must end with semi-colon!\n");
         return NULL;
     }
     Node *semiColonNode = newLeafNode(nextTk);
@@ -353,7 +362,7 @@ Node* coutFunc(){
     nextTk = nextToken();
 
     if(nextTk->type != BIT_LEFT){
-        printf("cout missing << for operands!");
+        printf("cout missing << for operands!\n");
         return NULL;
     }
 
@@ -366,9 +375,13 @@ Node* coutFunc(){
         loexp->firstChild = listOfExpressionsFunc();
         bitLeftNode->rightSibling = loexp;
     }
+    else{
+        printf("Missing expression(s) on right hand side of cout statement!\n");
+        return NULL;
+    }
 
     if(nextTk->type != SEMI_COLON){
-        printf("cout statement must end with semi-colon!");
+        printf("cout statement must end with semi-colon!\n");
         return NULL;
     }
     Node *semiColonNode = newLeafNode(nextTk);
@@ -583,7 +596,7 @@ Node* uopFunc(){
         lit->firstChild = litFunc();
         return lit;
     }
-    printf("Only '!', '-' and '~' are allowed as unary operators");
+    printf("Only '!', '-' and '~' are allowed as unary operators!\n");
     return NULL;
 }
 
@@ -595,7 +608,7 @@ Node* litFunc(){
         leftParent->rightSibling = expNode;
         expNode->firstChild = expFunc();
         if(nextTk->type != CLOSE_PARENT){
-            printf("Missing closing parentheses for expression literal");
+            printf("Missing closing parentheses for expression literal!\n");
             return NULL;
         }
         Node *rightParent = newLeafNode(nextTk);
@@ -625,7 +638,7 @@ Node* typeFunc(){
         nextTk = nextToken();
         return intOrCharNode;
     }
-    printf("Declaration without type!");
+    printf("Declaration without type!\n");
     return NULL;
 }
 

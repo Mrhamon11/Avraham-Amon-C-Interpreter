@@ -13,30 +13,6 @@ void executeStatement(Node *statementNode);
 void executeCin(Node *cinNode);
 
 int main(int argc, char *argv[]) {
-//    int x = 1;
-//    int y = 2;
-//    int z = 6;
-//    char c = 'w';
-//
-//    VariableArray *a = varArrayInit();
-//    add(a, x);
-//    add(a, y);
-//    add(a, z);
-//    add(a, c);
-//
-//    int i;
-//    for(i = 0; i < 4; i++){
-//        printf("%d\t", get(a, i));
-//    }
-//
-//    for(i = 0; i < 4; i++){
-//        if(i == 3){
-//            printf("%c\t", get(a, i));
-//        }
-//        else{
-//            printf("%d\t", get(a, i));
-//        }
-//    }
     createParseTree(argc, argv);
     varArray = varArrayInit();
     assignArray  = varArrayInit();
@@ -61,19 +37,26 @@ void executeStatements(Node *listOfStatements){
     Node *nextStatement = listOfStatements->firstChild;
 
     while(nextStatement != NULL){
-        if(nextStatement->data.LHS == "<cin>"){
-            executeCin(nextStatement);
-        }
-
+        executeStatement(nextStatement->firstChild);
         nextStatement = nextStatement->rightSibling;
     }
 }
 
 void executeStatement(Node *statementNode){
-
+    if(statementNode->data.LHS == "<cin>"){
+        executeCin(statementNode->firstChild);
+    }
 }
 
 void executeCin(Node *cinNode){
+    if(cinNode == NULL){
+        //A syntax error was found when parsing cin function.
+        //Syntax error was printed, so exit.
+        exit(1);
+    }
+
+    Node *lova = cinNode->rightSibling->rightSibling;
+
 
 }
 
