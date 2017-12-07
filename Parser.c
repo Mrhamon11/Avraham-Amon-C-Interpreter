@@ -223,6 +223,11 @@ Node *ifFunc(){
     nextTk = nextToken();
     Node *exp = newInnerNode("<exp>");
 
+    if(!inFirst(expRule, nextTk)){
+        printf("%s\n", "Assignment must have expression on right hand side!");
+        return NULL;
+    }
+
     ifNode->rightSibling = openParentNode;
     openParentNode->rightSibling = exp;
     exp->firstChild = expFunc();
@@ -672,6 +677,7 @@ Node* variableFunc(){
         nextTk = nextToken();
         return identNode;
     }
+    printf("Variable required!");
     return NULL;
 }
 

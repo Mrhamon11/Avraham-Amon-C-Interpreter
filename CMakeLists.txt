@@ -3,4 +3,4 @@ project(Assignment_7___Complete_Interpreter C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Assignment_7___Complete_Interpreter Interpreter.c InterpreterStructs.h)
+add_executable(Assignment_7___Complete_Interpreter Interpreter.c InterpreterStructs.h Interpreter.h)

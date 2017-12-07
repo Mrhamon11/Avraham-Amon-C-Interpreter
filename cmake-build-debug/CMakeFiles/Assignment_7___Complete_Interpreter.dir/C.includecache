@@ -9,14 +9,16 @@
 /home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/FirstFinder.h
 
 /home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Interpreter.c
+Interpreter.h
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Interpreter.h
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Interpreter.h
 stdio.h
 -
 Parser.c
 /home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Parser.c
 InterpreterStructs.h
 /home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/InterpreterStructs.h
-ParserStructs.h
-/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/ParserStructs.h
 
 /home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/InterpreterStructs.h
 stdio.h

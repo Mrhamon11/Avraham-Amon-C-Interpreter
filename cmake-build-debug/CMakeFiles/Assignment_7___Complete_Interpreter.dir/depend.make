@@ -3,6 +3,7 @@
 
 CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../FirstFinder.h
 CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../Interpreter.c
+CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../Interpreter.h
 CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../InterpreterStructs.h
 CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../Parser.c
 CMakeFiles/Assignment_7___Complete_Interpreter.dir/Interpreter.c.o: ../ParserStructs.h

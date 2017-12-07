@@ -81,6 +81,9 @@
 		<Unit filename="/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Interpreter.c">
 			<Option target="Assignment_7___Complete_Interpreter"/>
 		</Unit>
+		<Unit filename="/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Interpreter.h">
+			<Option target="Assignment_7___Complete_Interpreter"/>
+		</Unit>
 		<Unit filename="/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/InterpreterStructs.h">
 			<Option target="Assignment_7___Complete_Interpreter"/>
 		</Unit>

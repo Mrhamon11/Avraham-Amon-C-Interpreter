@@ -128,6 +128,16 @@ void revertOffset(Symbol *symbol){
     offset -= symbol->offset;
 }
 
+Symbol* getSymbolInTable(char *varName){
+    int i;
+    for(i = 0; i < symbolsInTable; i++){
+        if(strcmp(table[i].name, varName) == 0){
+            return &table[i];
+        }
+    }
+    return NULL;
+}
+
 _Bool symbolInTable(Symbol *symbol){
     int i;
     for(i = 0; i < symbolsInTable; i++){
@@ -152,6 +162,7 @@ void addSymbolToTable(Symbol *symbol){
     table[symbolsInTable] = *symbol;
     symbolsInTable++;
 }
+
 
 void printTable(){
     printf("Printing contents of Symbol Table:\n\n");
