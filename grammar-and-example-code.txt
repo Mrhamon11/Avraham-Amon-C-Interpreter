@@ -1,0 +1,51 @@
+﻿Avraham Amon
+Assignment 3
+Programming Languages
+10/24/2017
+
+
+<program> --> <listofdeclarations> <listofstatements>
+<listofstatements> --> {<statement>}
+<listofdeclarations> --> {<delaration>}
+<declaration> --> <type> <variables> ";"
+<variables> --> <variable> {"," <variable>}
+<variable>-->IDENT
+<type> --> ("int" | “char”)
+<statement> --> (<cin> | <cout> | <if> | <assign> | <while> | “{“ <listofstatements> “}” | return) //return should be return <exp> ;?
+<cin> --> "cin" ">>" <listofvariableangle> “;”
+<listofvariableangle> --> <variable> {">>" <variable>}
+<cout> --> "cout" "<<" <listofexpressions> “;”
+<listofexpressions> --> <exp> {"<<" <exp>}
+<if> --> “if” “(" <exp> ")" <statement> ["else" <statement>]
+<exp> --> <bopland> {"||" <bopland>}
+<bopland> --> <bopbor> {"&&" <bopbor>}
+<bopbor> --> <bopband> {"|" <bopband>}
+<bopband> --> <equalilty> {"&" <equalilty>}
+<equalilty> --> <compare> {("!=" | "==") <compare>}
+<compare> --> <plusminus> {(">" | ">=" | "<" | "<=") <plusminus>}
+<plusminus> --> <multdividemod> {("+" | "-") <multdividemod>}
+<multdividemod> --> <uop> {("*" | "/" | "%") <uop>}
+<uop> --> ("!" | "-" | "~") <uop> | <lit> 
+<lit> --> INTEGER | CONSTCH | <variable> | "(" <exp> ")"
+<assign> --> <variables> "=" <exp> “;”
+<while> --> “while” “(“ <exp> “)” <statement>
+
+
+Sample Program:
+
+int x,y,z;
+int d;
+
+cin>>x>>y;
+
+z=x+2*y-7;
+
+d=z/(x+2*x);
+
+cout<<x<<y+3*z<<d-(x-2);
+while(y>0){
+	z=x % y;
+	x=y;
+	y=z;
+}
+cout<<x;

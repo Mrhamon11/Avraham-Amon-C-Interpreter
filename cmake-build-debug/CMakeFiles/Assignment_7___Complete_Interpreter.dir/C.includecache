@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/FirstFinder.h
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Parser.c
+Tokenizer.c
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Tokenizer.c
+FirstFinder.h
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/FirstFinder.h
+ParserStructs.h
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/ParserStructs.h
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/ParserStructs.h
+TokenizerStructs.h
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/TokenizerStructs.h
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Tokenizer.c
+stdio.h
+-
+ctype.h
+-
+TokenizerStructs.h
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/TokenizerStructs.h
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/TokenizerStructs.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/main.c
+stdio.h
+-
+Parser.c
+/home/hamon11/OneDrive/School/YU/Classes/2017 Fall/Programming Languages/Assignments/Assignment 7 - Complete Interpreter/Parser.c
+
