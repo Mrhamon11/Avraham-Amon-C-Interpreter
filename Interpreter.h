@@ -17,6 +17,7 @@ void loadVarAndAssignArray();
 void executeStatements(Node *listOfStatements);
 void executeStatement(Node *statementNode);
 void executeCin(Node *cinNode);
+void executeAssign(Node *assignNode);
 void scanToArrays(Node *identNode);
 
 #endif //ASSIGNMENT_7_COMPLETE_INTERPRETER_INTERPRETER_H

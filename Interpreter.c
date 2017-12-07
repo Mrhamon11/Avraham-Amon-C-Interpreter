@@ -77,6 +77,10 @@ void executeCin(Node *cinNode) {
     }
 }
 
+void executeAssign(Node *assignNode){
+    
+}
+
 /**
  * Ensures variable array has enough room for all symbols declared in file.
  * Initializes assignment array to keep track of which variables have been
