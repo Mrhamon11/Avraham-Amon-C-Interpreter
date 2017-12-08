@@ -1,4 +1,5 @@
 #include "Interpreter.h"
+#include "ParserStructs.h"
 
 int main(int argc, char *argv[]) {
     createParseTree(argc, argv);
@@ -37,6 +38,24 @@ void executeStatement(Node *statementNode){
     if(statementNode->data.LHS == "<cin>"){
         executeCin(statementNode->firstChild);
     }
+    else if(statementNode->data.LHS == "<cout>"){
+        executeCout(statementNode->firstChild);
+    }
+    else if(statementNode->data.LHS == "<if>"){
+        executeIf(statementNode->firstChild);
+    }
+    else if(statementNode->data.LHS == "<assign>"){
+        executeAssign(statementNode->firstChild);
+    }
+    else if(statementNode->data.LHS == "<while>"){
+        executeWhile(statementNode->firstChild);
+    }
+    else if(statementNode->data.token.type == OPEN_BRACE){
+        executeListOfStatements(statementNode);
+    }
+    else if(statementNode->data.token.type == RETURN_KEYWORD){
+        executeReturn(statementNode);
+    }
 }
 
 /**
@@ -47,25 +66,8 @@ void executeStatement(Node *statementNode){
  *                if there was a syntax error in the cin statement.
  */
 void executeCin(Node *cinNode) {
-    if (cinNode == NULL) {
-        //A syntax error was found when parsing cin function.
-        //Syntax error was printed, so exit.
-        exit(1);
-    }
-
     Node *lova = cinNode->rightSibling->rightSibling;
-    if (lova == NULL) {
-        //A syntax error was found when parsing cin function.
-        //Syntax error was printed, so exit.
-        exit(1);
-    }
-
     Node *varNode = lova->firstChild;
-    if (varNode == NULL) {
-        //A syntax error was found when parsing cin function.
-        //Syntax error was printed, so exit.
-        exit(1);
-    }
 
     Node *identNode = varNode->firstChild;
     scanToArrays(identNode);
@@ -77,8 +79,153 @@ void executeCin(Node *cinNode) {
     }
 }
 
+void executeCout(Node *coutNode){
+
+}
+
+void executeIf(Node *ifNode){
+
+}
+
 void executeAssign(Node *assignNode){
     
+}
+
+void executeWhile(Node *whileNode){
+
+}
+
+void executeListOfStatements(Node *openBraceNode){
+
+}
+
+void executeReturn(Node *returnNode){
+    
+}
+
+int executeExp(Node *expNode){
+    Node *boplandNode = expNode->firstChild;
+    int bopland = executeBopland(boplandNode);
+
+    while(boplandNode->rightSibling != NULL){
+        boplandNode = boplandNode->rightSibling->rightSibling;
+        bopland = bopland || executeBopland(boplandNode);
+    }
+    return bopland;
+}
+
+int executeBopland(Node *boplandNode){
+    Node *bopborNode = boplandNode->firstChild;
+    int bopbor = executeBopbor(bopborNode);
+
+    while(bopborNode->rightSibling != NULL){
+        bopborNode = bopborNode->rightSibling->rightSibling;
+        bopbor = bopbor && executeBopbor(bopborNode);
+    }
+    return bopbor;
+}
+
+int executeBopbor(Node *bopborNode){
+    Node *bopbandNode = bopborNode->firstChild;
+    int bopband = executeBopband(bopbandNode);
+
+    while(bopbandNode->rightSibling != NULL){
+        bopbandNode = bopbandNode->rightSibling->rightSibling;
+        bopband = bopband | executeBopband(bopbandNode);
+    }
+    return bopband;
+}
+
+int executeBopband(Node *bopbandNode){
+    Node *equalityNode = bopbandNode->firstChild;
+    int equality = executeEquality(equalityNode);
+
+    while(equalityNode->rightSibling != NULL){
+        equalityNode = equalityNode->rightSibling->rightSibling;
+        equality = equality & executeEquality(equalityNode);
+    }
+    return equality;
+}
+
+int executeEquality(Node *equalityNode){
+    Node *compareNode = equalityNode->firstChild;
+    int compare = executeCompare(compareNode);
+
+    while(compareNode->rightSibling != NULL){
+        compareNode = compareNode->rightSibling;
+        if(compareNode->data.token.type == NOT_EQUAL){
+            compare = compare != executeCompare(compareNode);
+        }
+        else if(compareNode->data.token.type == EQUAL){
+            compare = compare == executeCompare(compareNode);
+        }
+        compareNode = compareNode->rightSibling;
+    }
+    return compare;
+}
+
+int executeCompare(Node *compareNode){
+    Node *plusminusNode = compareNode->firstChild;
+    int plusminus = executePlusminus(plusminusNode);
+
+    while(plusminusNode->rightSibling != NULL){
+        plusminusNode = plusminusNode->rightSibling;
+        if(plusminusNode->data.token.type == GREATER_THAN){
+            plusminus = plusminus > executePlusminus(plusminusNode);
+        }
+        else if(plusminusNode->data.token.type == GREATER_THAN_EQUAL){
+            plusminus = plusminus >= executePlusminus(plusminusNode);
+        }
+        else if(plusminusNode->data.token.type == LESS_THAN){
+            plusminus = plusminus < executePlusminus(plusminusNode);
+        }
+        else if(plusminusNode->data.token.type <= LESS_THAN_EQUAL){
+            plusminus = plusminus <= executePlusminus(plusminusNode);
+        }
+        plusminusNode = plusminusNode->rightSibling;
+    }
+    return plusminus;
+}
+
+int executePlusminus(Node *plusminusNode){
+    Node *multdivmodNode = plusminusNode->firstChild;
+    int multdivmod = executeMultDivMod(multdivmodNode);
+
+    while(multdivmodNode->rightSibling != NULL){
+        multdivmodNode = multdivmodNode->rightSibling;
+        if(multdivmodNode->data.token.type == ADD_OP){
+            multdivmod = multdivmod + executeMultDivMod(multdivmodNode);
+        }
+        else if(multdivmodNode->data.token.type == SUB_OP){
+            multdivmod = multdivmod - executeMultDivMod(multdivmodNode);
+        }
+        multdivmodNode = multdivmodNode->rightSibling;
+    }
+    return multdivmod;
+}
+
+int executeMultDivMod(Node *multdivmodNode){
+    Node *uopNode = multdivmodNode->firstChild;
+    int uop = executeUopNode(uopNode);
+
+    while(uopNode->rightSibling != NULL){
+        uopNode = uopNode->rightSibling;
+        if(uopNode->data.token.type == MULT_OP){
+            uop = uop * executeUopNode(uopNode);
+        }
+        else if(uopNode->data.token.type == DIV_OP){
+            uop = uop / executeUopNode(uopNode);
+        }
+        else if(uopNode->data.token.type == MOD_OP){
+            uop = uop % executeUopNode(uopNode);
+        }
+        uopNode = uopNode->rightSibling;
+    }
+    return uop;
+}
+
+int executeUopNode(Node *uopNode){
+
 }
 
 /**

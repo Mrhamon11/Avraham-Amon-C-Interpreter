@@ -6,6 +6,7 @@ Token *nextTk;
 Node *root;
 PotentialSymbol ps;
 _Bool symbolTableCreated = 0;
+_Bool synataxError = 0;
 
 Node* programFunc();
 Node* listOfStatementsFunc();
@@ -40,6 +41,10 @@ void createParseTree(int argc, char *argv[]){
     nextTk = nextToken();
     root = newInnerNode("<program>");
     root->firstChild = programFunc();
+
+    if(synataxError){
+        exit(1);
+    }
 //    printTree(root);
 //    return root;
 }
@@ -111,7 +116,9 @@ Node* declarationFunc(){
     typeNode->rightSibling = varsNode;
 
     if(nextTk->type != SEMI_COLON){
-        printf("Missing ; after declaration statement!");
+        printf("Missing ; after declaration statement!\n");
+        synataxError = 1;
+        return NULL;
     }
     else{
         Node *semiColonNode = newLeafNode(nextTk);
@@ -122,6 +129,7 @@ Node* declarationFunc(){
 
 
     if(typeNode->firstChild == NULL){
+        synataxError = 1;
         return NULL;
     }
     return typeNode;
@@ -172,6 +180,7 @@ Node* statementFunc(){
         listOfStateNode->firstChild = listOfStatementsFunc();
         if(nextTk->type != CLOSE_BRACE){
             printf("List of statements must be surrounded in curly braces!");
+            synataxError = 1;
             return NULL;
         }
         Node *closeBraceNode = newLeafNode(nextTk);
@@ -197,6 +206,7 @@ Node* statementFunc(){
 
         if(!nextTk->type == SEMI_COLON){
             printf("%s\n", "return statements must be followed by a semi-colon!");
+            synataxError = 1;
             return NULL;
         }
         Node *semiColonNode = newLeafNode(nextTk);
@@ -206,6 +216,7 @@ Node* statementFunc(){
     }
     else{
         printf("%s\n", "Not a statement!");
+        synataxError = 1;
         return NULL;
     }
 }
@@ -216,6 +227,7 @@ Node *ifFunc(){
 
     if(nextTk->type != OPEN_PARENT) {
         printf("%s\n", "Expressions in if statements must be surrounded by parentheses!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -225,6 +237,7 @@ Node *ifFunc(){
 
     if(!inFirst(expRule, nextTk)){
         printf("%s\n", "Assignment must have expression on right hand side!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -234,6 +247,7 @@ Node *ifFunc(){
 
     if(nextTk->type != CLOSE_PARENT){
         printf("%s\n", "Expressions in if statements must be surrounded by parentheses!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -263,6 +277,7 @@ Node* assignFunc(){
 
     if(nextTk->type != ASSIGN) {
         printf("%s\n", "missing assignment operator!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -272,6 +287,7 @@ Node* assignFunc(){
 
     if(!inFirst(expRule, nextTk)){
         printf("%s\n", "Assignment must have expression on right hand side!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -281,6 +297,7 @@ Node* assignFunc(){
 
     if(nextTk->type != SEMI_COLON){
         printf("%s\n", "Missing ; in assignment statement!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -297,6 +314,7 @@ Node* whileFunc(){
 
     if(nextTk->type != OPEN_PARENT) {
         printf("%s\n", "Expressions in while statements must be surrounded by parentheses!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -306,6 +324,7 @@ Node* whileFunc(){
 
     if(!inFirst(expRule, nextTk)){
         printf("Missing expression for condition in while loop!\n");
+        synataxError = 1;
         return NULL;
     }
 
@@ -315,6 +334,7 @@ Node* whileFunc(){
 
     if(nextTk->type != CLOSE_PARENT){
         printf("%s\n", "Expressions in while statements must be surrounded by parentheses!");
+        synataxError = 1;
         return NULL;
     }
 
@@ -335,6 +355,7 @@ Node *cinFunc(){
 
     if(nextTk->type != BIT_RIGHT){
         printf("cin missing >> for operands!\n");
+        synataxError = 1;
         return NULL;
     }
     Node *bitRightNode = newLeafNode(nextTk);
@@ -348,11 +369,13 @@ Node *cinFunc(){
     }
     else{
         printf("Missing variable on right hand side of cin statement!\n");
+        synataxError = 1;
         return NULL;
     }
 
     if(nextTk->type != SEMI_COLON){
         printf("cin statement must end with semi-colon!\n");
+        synataxError = 1;
         return NULL;
     }
     Node *semiColonNode = newLeafNode(nextTk);
@@ -368,6 +391,7 @@ Node* coutFunc(){
 
     if(nextTk->type != BIT_LEFT){
         printf("cout missing << for operands!\n");
+        synataxError = 1;
         return NULL;
     }
 
@@ -382,11 +406,13 @@ Node* coutFunc(){
     }
     else{
         printf("Missing expression(s) on right hand side of cout statement!\n");
+        synataxError = 1;
         return NULL;
     }
 
     if(nextTk->type != SEMI_COLON){
         printf("cout statement must end with semi-colon!\n");
+        synataxError = 1;
         return NULL;
     }
     Node *semiColonNode = newLeafNode(nextTk);
@@ -602,6 +628,7 @@ Node* uopFunc(){
         return lit;
     }
     printf("Only '!', '-' and '~' are allowed as unary operators!\n");
+    synataxError = 1;
     return NULL;
 }
 
@@ -614,6 +641,7 @@ Node* litFunc(){
         expNode->firstChild = expFunc();
         if(nextTk->type != CLOSE_PARENT){
             printf("Missing closing parentheses for expression literal!\n");
+            synataxError = 1;
             return NULL;
         }
         Node *rightParent = newLeafNode(nextTk);
@@ -644,6 +672,7 @@ Node* typeFunc(){
         return intOrCharNode;
     }
     printf("Declaration without type!\n");
+    synataxError = 1;
     return NULL;
 }
 
@@ -678,6 +707,7 @@ Node* variableFunc(){
         return identNode;
     }
     printf("Variable required!");
+    synataxError = 1;
     return NULL;
 }
 
@@ -688,6 +718,7 @@ _Bool maintainSymbolTable(Token *token){
         }
         else{
             printf("Variable %s was never declared!\n", token->lexeme);
+            synataxError = 1;
             return 0;
         }
     }
@@ -696,6 +727,7 @@ _Bool maintainSymbolTable(Token *token){
         Symbol *symbol = newSymbol(ps);
         if(symbolInTable(symbol)){
             printf("Variable %s was already declared!\n", token->lexeme);
+            synataxError = 1;
             revertOffset(symbol);
             return 0;
         }
