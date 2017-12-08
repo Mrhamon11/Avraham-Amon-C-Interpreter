@@ -109,11 +109,31 @@ void executeIf(Node *ifNode){
 }
 
 void executeAssign(Node *assignNode){
+    Node *expNode = assignNode->rightSibling->rightSibling;
+    int expResult = executeExp(expNode);
 
+    Node *var = assignNode->firstChild;
+    int index = getSymbolInTable(var->firstChild->data.token.lexeme)->offset;
+    set(varArray, index, expResult);
+    set(assignArray, index, 1);
+
+    var = var->rightSibling;
+    while(var != NULL){
+        index = getSymbolInTable(var->rightSibling->firstChild->data.token.lexeme)->offset;
+        set(varArray, index, expResult);
+        set(assignArray, index, 1);
+        var = var->rightSibling->rightSibling;
+    }
 }
 
 void executeWhile(Node *whileNode){
+    Node *expNode = whileNode->rightSibling->rightSibling;
+    int expResult = executeExp(expNode);
 
+    while(expResult){
+        executeStatement(expNode->rightSibling->rightSibling->firstChild);
+        expResult = executeExp(expNode);
+    }
 }
 
 void executeListOfStatements(Node *openBraceNode){

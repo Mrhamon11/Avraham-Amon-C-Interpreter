@@ -18,6 +18,7 @@ Node* typeFunc();
 Node* statementFunc();
 Node* cinFunc();
 Node* listOfVariableAngleFunc();
+Node* listOfVariableAssignFunc();
 Node* coutFunc();
 Node* listOfExpressionsFunc();
 Node* ifFunc();
@@ -441,6 +442,25 @@ Node* listOfVariableAngleFunc(){
     return subtreeRoot;
 }
 
+Node* listOfVariableAssignFunc(){
+    Node *varNode = newInnerNode("<variable>");
+    varNode->firstChild = variableFunc();
+    Node *subtreeRoot = varNode;
+    while(nextTk->type == ASSIGN){
+        Node *bitRightNode = newLeafNode(nextTk);
+        varNode->rightSibling = bitRightNode;
+        nextTk = nextToken();
+        varNode = variableFunc();
+        if(varNode != NULL){
+            Node *var = newInnerNode("<variable>");
+            var->firstChild = varNode;
+            bitRightNode->rightSibling = var;
+            varNode = var;
+        }
+    }
+    return subtreeRoot;
+}
+
 Node* listOfExpressionsFunc(){
     Node *expNode = newInnerNode("<exp>");
     expNode->firstChild = expFunc();
@@ -689,6 +709,7 @@ Node* variablesFunc(){
             Node *var = newInnerNode("<variable>");
             var->firstChild = varNode;
             commaNode->rightSibling = var;
+            varNode = var;
         }
     }
     return subtreeRoot;

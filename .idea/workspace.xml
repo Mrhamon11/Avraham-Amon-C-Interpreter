@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interpreter.c" line="116" />
+    <bookmark url="file://$PROJECT_DIR$/Interpreter.c" line="163" />
+    <bookmark url="file://$PROJECT_DIR$/cmake-build-debug/CFile.c" line="4" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -17,7 +18,8 @@
     <list default="true" id="e11e2822-f0b6-418f-a2d5-434e4a17843d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Interpreter.c" afterPath="$PROJECT_DIR$/Interpreter.c" />
-      <change beforePath="$PROJECT_DIR$/Interpreter.h" afterPath="$PROJECT_DIR$/Interpreter.h" />
+      <change beforePath="$PROJECT_DIR$/Parser.c" afterPath="$PROJECT_DIR$/Parser.c" />
+      <change beforePath="$PROJECT_DIR$/grammar-and-example-code.txt" afterPath="$PROJECT_DIR$/grammar-and-example-code.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +45,8 @@
       <file leaf-file-name="InterpreterStructs.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InterpreterStructs.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
                 <element signature="e#168#186#0" expanded="true" />
                 <element signature="e#456#526#1" expanded="false" />
@@ -59,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/CFile.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -68,12 +70,11 @@
       <file leaf-file-name="Interpreter.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+            <state relative-caret-position="855">
+              <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <element signature="e#8399#8805#0" expanded="false" />
-                <element signature="e#9019#9310#0" expanded="false" />
+                <element signature="e#10349#10755#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -82,8 +83,8 @@
       <file leaf-file-name="Interpreter.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="684">
+              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding>
                 <element signature="e#154#172#0" expanded="true" />
               </folding>
@@ -94,8 +95,8 @@
       <file leaf-file-name="ParserStructs.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ParserStructs.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="130" column="7" lean-forward="false" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+            <state relative-caret-position="478">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,8 +105,28 @@
       <file leaf-file-name="Parser.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parser.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8406">
-              <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tokenizer.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tokenizer.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FirstFinder.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FirstFinder.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,6 +138,7 @@
     <findStrings>
       <find>listOfVariableAn</find>
       <find>listofvariableanglefu</find>
+      <find>variables</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,10 +152,11 @@
         <option value="$PROJECT_DIR$/TokenizerStructs.h" />
         <option value="$PROJECT_DIR$/InterpreterStructs.h" />
         <option value="$PROJECT_DIR$/ParserStructs.h" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/CFile.c" />
-        <option value="$PROJECT_DIR$/Parser.c" />
         <option value="$PROJECT_DIR$/Interpreter.h" />
+        <option value="$PROJECT_DIR$/Tokenizer.c" />
+        <option value="$PROJECT_DIR$/Parser.c" />
         <option value="$PROJECT_DIR$/Interpreter.c" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/CFile.c" />
       </list>
     </option>
   </component>
@@ -235,7 +258,7 @@
       <workItem from="1512605209635" duration="35000" />
       <workItem from="1512605245763" duration="15032000" />
       <workItem from="1512694648130" duration="4353000" />
-      <workItem from="1512699031973" duration="10979000" />
+      <workItem from="1512699031973" duration="20756000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;changed main.c to Interpreter.c&quot;">
       <created>1512606163301</created>
@@ -286,11 +309,25 @@
       <option name="project" value="LOCAL" />
       <updated>1512705023224</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&quot;added rest of exp executor&quot;">
+      <created>1512710115454</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512710115454</updated>
+    </task>
+    <task id="LOCAL-00009" summary="&quot;added all execute function except assign and while&quot;">
+      <created>1512716462461</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1512716462461</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30776000" />
+    <option name="totallyTimeSpent" value="40553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1234" y="-4" width="1857" height="1092" extended-state="6" />
@@ -302,7 +339,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -330,11 +367,20 @@
     <MESSAGE value="&quot;Finished cin implementation function. Also added some comments.&quot;" />
     <MESSAGE value="&quot;Added declaration of executeAssign function&quot;" />
     <MESSAGE value="&quot;added some of the functions for exp execution&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;added some of the functions for exp execution&quot;" />
+    <MESSAGE value="&quot;added rest of exp executor&quot;" />
+    <MESSAGE value="&quot;added all execute function except assign and while&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;added all execute function except assign and while&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Parser.c</url>
+          <line>312</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -366,8 +412,7 @@
           <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#8399#8805#0" expanded="false" />
-            <element signature="e#9019#9310#0" expanded="false" />
+            <element signature="e#10349#10755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -467,8 +512,7 @@
           <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#8399#8805#0" expanded="false" />
-            <element signature="e#9019#9310#0" expanded="false" />
+            <element signature="e#10349#10755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,8 +531,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#8399#8805#0" expanded="false" />
-            <element signature="e#9019#9310#0" expanded="false" />
+            <element signature="e#10349#10755#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -517,10 +560,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ParserStructs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InterpreterStructs.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="e#168#186#0" expanded="true" />
             <element signature="e#456#526#1" expanded="false" />
@@ -530,26 +581,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Interpreter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="e#154#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FirstFinder.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="406">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParserStructs.h">
+    <entry file="file://$PROJECT_DIR$/Tokenizer.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="130" column="7" lean-forward="false" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
+        <state relative-caret-position="370">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Parser.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8406">
-          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state relative-caret-position="172">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -557,29 +618,18 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CFile.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Interpreter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <element signature="e#154#172#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+        <state relative-caret-position="855">
+          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#8399#8805#0" expanded="false" />
-            <element signature="e#9019#9310#0" expanded="false" />
+            <element signature="e#10349#10755#0" expanded="false" />
           </folding>
         </state>
       </provider>

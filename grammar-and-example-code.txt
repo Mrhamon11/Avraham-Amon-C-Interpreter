@@ -28,6 +28,7 @@ Programming Languages
 <uop> --> ("!" | "-" | "~") <uop> | <lit> 
 <lit> --> INTEGER | CONSTCH | <variable> | "(" <exp> ")"
 <assign> --> <variables> "=" <exp> “;”
+<listofvariablesassign> --> <variable> {"=" <variable>}
 <while> --> “while” “(“ <exp> “)” <statement>
 
 
