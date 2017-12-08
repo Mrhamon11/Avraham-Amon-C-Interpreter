@@ -83,14 +83,33 @@ void executeCout(Node *coutNode){
     Node *loe = coutNode->rightSibling->rightSibling;
     Node *expNode = loe->firstChild;
 
+    int expResult = executeExp(expNode);
+    printValue(expResult);
+
+    Node *bitLeftNode = expNode->rightSibling;
+    while(bitLeftNode != NULL){
+        expResult = executeExp(bitLeftNode->rightSibling);
+        printValue(expResult);
+        bitLeftNode = bitLeftNode->rightSibling->rightSibling;
+    }
 }
 
 void executeIf(Node *ifNode){
-
+    Node *expNode = ifNode->rightSibling->rightSibling;
+    Node *statementNode = expNode->rightSibling->rightSibling;
+    int expResult = executeExp(expNode);
+    if(expResult){
+        executeStatement(statementNode->firstChild);
+    }
+    else{
+        if(statementNode->rightSibling != NULL){
+            executeStatement(statementNode->rightSibling->rightSibling->firstChild);
+        }
+    }
 }
 
 void executeAssign(Node *assignNode){
-    
+
 }
 
 void executeWhile(Node *whileNode){
@@ -98,11 +117,19 @@ void executeWhile(Node *whileNode){
 }
 
 void executeListOfStatements(Node *openBraceNode){
+    Node *statementNode = openBraceNode->rightSibling->firstChild;
 
+    while(statementNode != NULL){
+        executeStatement(statementNode->firstChild);
+        statementNode = statementNode->rightSibling;
+    }
 }
 
 void executeReturn(Node *returnNode){
-    
+    //since the EBNF only contains rules found inside the body of the function,
+    //a return statement essentially means quit. Leaving this function here
+    //in case I decide to change the grammar to include subprograms.
+    exit(1);
 }
 
 int executeExp(Node *expNode){
@@ -310,6 +337,10 @@ void scanToArrays(Node *identNode){
     }
     set(varArray, symbol->offset, var);
     set(assignArray, symbol->offset, 1);
+}
+
+void printValue(int value){
+    printf("%d\n", value);
 }
 
 _Bool varInitialized(Node *identNode){

@@ -528,11 +528,11 @@ Token* checkKeyword(char token[]){
 
     char c = getChar();
 
-    while(!isspace(c) && c != 0 && c != '('){
+    while(!isspace(c) && c != 0 && c != '(' && c != '{'){
         potentialKw[i++] = c;
         c = getChar();
     }
-    if(c == ' ' || c == '('){
+    if(c == ' ' || c == '(' || c == '{'){
         ungetChar(c);
     }
 

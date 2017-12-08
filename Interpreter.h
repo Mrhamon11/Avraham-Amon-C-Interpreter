@@ -36,5 +36,6 @@ int executeLit(Node *litNode);
 int executeVar(Node *varNode);
 void scanToArrays(Node *identNode);
 _Bool varInitialized(Node *identNode);
+void printValue(int value);
 
 #endif //ASSIGNMENT_7_COMPLETE_INTERPRETER_INTERPRETER_H

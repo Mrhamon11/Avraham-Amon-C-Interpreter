@@ -221,7 +221,7 @@ Node* statementFunc(){
     }
 }
 
-Node *ifFunc(){
+Node* ifFunc(){
     Node *ifNode = newLeafNode(nextTk);
     nextTk = nextToken();
 
@@ -236,7 +236,7 @@ Node *ifFunc(){
     Node *exp = newInnerNode("<exp>");
 
     if(!inFirst(expRule, nextTk)){
-        printf("%s\n", "Assignment must have expression on right hand side!");
+        printf("%s\n", "Missing expression in if statement!");
         synataxError = 1;
         return NULL;
     }
