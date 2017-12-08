@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Interpreter.c" line="114" />
+    <bookmark url="file://$PROJECT_DIR$/Interpreter.c" line="116" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -18,9 +18,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Interpreter.c" afterPath="$PROJECT_DIR$/Interpreter.c" />
       <change beforePath="$PROJECT_DIR$/Interpreter.h" afterPath="$PROJECT_DIR$/Interpreter.h" />
-      <change beforePath="$PROJECT_DIR$/Parser.c" afterPath="$PROJECT_DIR$/Parser.c" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_7___Complete_Interpreter" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_7___Complete_Interpreter" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CFile.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CFile.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,13 +68,12 @@
       <file leaf-file-name="Interpreter.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Interpreter.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="227" column="4" lean-forward="true" selection-start-line="227" selection-start-column="4" selection-end-line="227" selection-end-column="4" />
+            <state relative-caret-position="588">
+              <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <element signature="e#6879#7288#0" expanded="false" />
-                <element signature="e#6879#7503#0" expanded="false" />
-                <element signature="e#7505#7796#0" expanded="false" />
+                <element signature="e#8399#8805#0" expanded="false" />
+                <element signature="e#9019#9310#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -86,8 +82,8 @@
       <file leaf-file-name="Interpreter.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Interpreter.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state relative-caret-position="666">
+              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
               <folding>
                 <element signature="e#154#172#0" expanded="true" />
               </folding>
@@ -108,7 +104,7 @@
       <file leaf-file-name="Parser.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parser.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5490">
+            <state relative-caret-position="-8406">
               <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
@@ -239,7 +235,7 @@
       <workItem from="1512605209635" duration="35000" />
       <workItem from="1512605245763" duration="15032000" />
       <workItem from="1512694648130" duration="4353000" />
-      <workItem from="1512699031973" duration="5927000" />
+      <workItem from="1512699031973" duration="10979000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;changed main.c to Interpreter.c&quot;">
       <created>1512606163301</created>
@@ -283,11 +279,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512630380538</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;added some of the functions for exp execution&quot;">
+      <created>1512705023224</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512705023224</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25724000" />
+    <option name="totallyTimeSpent" value="30776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1234" y="-4" width="1857" height="1092" extended-state="6" />
@@ -295,6 +298,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34969324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -304,7 +308,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41002044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -326,7 +329,8 @@
     <MESSAGE value="&quot;Added checks in parser to ensure that expression must be present on while, assign and cout statements.&quot;" />
     <MESSAGE value="&quot;Finished cin implementation function. Also added some comments.&quot;" />
     <MESSAGE value="&quot;Added declaration of executeAssign function&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Added declaration of executeAssign function&quot;" />
+    <MESSAGE value="&quot;added some of the functions for exp execution&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;added some of the functions for exp execution&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -362,9 +366,8 @@
           <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#6879#7288#0" expanded="false" />
-            <element signature="e#6879#7503#0" expanded="false" />
-            <element signature="e#7505#7796#0" expanded="false" />
+            <element signature="e#8399#8805#0" expanded="false" />
+            <element signature="e#9019#9310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -464,9 +467,8 @@
           <caret line="115" column="16" lean-forward="true" selection-start-line="115" selection-start-column="16" selection-end-line="115" selection-end-column="16" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#6879#7288#0" expanded="false" />
-            <element signature="e#6879#7503#0" expanded="false" />
-            <element signature="e#7505#7796#0" expanded="false" />
+            <element signature="e#8399#8805#0" expanded="false" />
+            <element signature="e#9019#9310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -485,9 +487,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#6879#7288#0" expanded="false" />
-            <element signature="e#6879#7503#0" expanded="false" />
-            <element signature="e#7505#7796#0" expanded="false" />
+            <element signature="e#8399#8805#0" expanded="false" />
+            <element signature="e#9019#9310#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,7 +548,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Parser.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5490">
+        <state relative-caret-position="-8406">
           <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
@@ -563,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        <state relative-caret-position="666">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
           <folding>
             <element signature="e#154#172#0" expanded="true" />
           </folding>
@@ -573,13 +574,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Interpreter.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="227" column="4" lean-forward="true" selection-start-line="227" selection-start-column="4" selection-end-line="227" selection-end-column="4" />
+        <state relative-caret-position="588">
+          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#6879#7288#0" expanded="false" />
-            <element signature="e#6879#7503#0" expanded="false" />
-            <element signature="e#7505#7796#0" expanded="false" />
+            <element signature="e#8399#8805#0" expanded="false" />
+            <element signature="e#9019#9310#0" expanded="false" />
           </folding>
         </state>
       </provider>

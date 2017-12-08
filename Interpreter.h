@@ -31,7 +31,10 @@ int executeEquality(Node *equalityNode);
 int executeCompare(Node *compareNode);
 int executePlusminus(Node *plusminusNode);
 int executeMultDivMod(Node *multdivmodNode);
-int executeUopNode(Node *uopNode);
+int executeUop(Node *uopNode);
+int executeLit(Node *litNode);
+int executeVar(Node *varNode);
 void scanToArrays(Node *identNode);
+_Bool varInitialized(Node *identNode);
 
 #endif //ASSIGNMENT_7_COMPLETE_INTERPRETER_INTERPRETER_H

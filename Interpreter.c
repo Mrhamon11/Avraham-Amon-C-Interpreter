@@ -80,6 +80,8 @@ void executeCin(Node *cinNode) {
 }
 
 void executeCout(Node *coutNode){
+    Node *loe = coutNode->rightSibling->rightSibling;
+    Node *expNode = loe->firstChild;
 
 }
 
@@ -154,10 +156,10 @@ int executeEquality(Node *equalityNode){
     while(compareNode->rightSibling != NULL){
         compareNode = compareNode->rightSibling;
         if(compareNode->data.token.type == NOT_EQUAL){
-            compare = compare != executeCompare(compareNode);
+            compare = compare != executeCompare(compareNode->rightSibling);
         }
         else if(compareNode->data.token.type == EQUAL){
-            compare = compare == executeCompare(compareNode);
+            compare = compare == executeCompare(compareNode->rightSibling);
         }
         compareNode = compareNode->rightSibling;
     }
@@ -171,16 +173,16 @@ int executeCompare(Node *compareNode){
     while(plusminusNode->rightSibling != NULL){
         plusminusNode = plusminusNode->rightSibling;
         if(plusminusNode->data.token.type == GREATER_THAN){
-            plusminus = plusminus > executePlusminus(plusminusNode);
+            plusminus = plusminus > executePlusminus(plusminusNode->rightSibling);
         }
         else if(plusminusNode->data.token.type == GREATER_THAN_EQUAL){
-            plusminus = plusminus >= executePlusminus(plusminusNode);
+            plusminus = plusminus >= executePlusminus(plusminusNode->rightSibling);
         }
         else if(plusminusNode->data.token.type == LESS_THAN){
-            plusminus = plusminus < executePlusminus(plusminusNode);
+            plusminus = plusminus < executePlusminus(plusminusNode->rightSibling);
         }
         else if(plusminusNode->data.token.type <= LESS_THAN_EQUAL){
-            plusminus = plusminus <= executePlusminus(plusminusNode);
+            plusminus = plusminus <= executePlusminus(plusminusNode->rightSibling);
         }
         plusminusNode = plusminusNode->rightSibling;
     }
@@ -194,10 +196,10 @@ int executePlusminus(Node *plusminusNode){
     while(multdivmodNode->rightSibling != NULL){
         multdivmodNode = multdivmodNode->rightSibling;
         if(multdivmodNode->data.token.type == ADD_OP){
-            multdivmod = multdivmod + executeMultDivMod(multdivmodNode);
+            multdivmod = multdivmod + executeMultDivMod(multdivmodNode->rightSibling);
         }
         else if(multdivmodNode->data.token.type == SUB_OP){
-            multdivmod = multdivmod - executeMultDivMod(multdivmodNode);
+            multdivmod = multdivmod - executeMultDivMod(multdivmodNode->rightSibling);
         }
         multdivmodNode = multdivmodNode->rightSibling;
     }
@@ -206,33 +208,77 @@ int executePlusminus(Node *plusminusNode){
 
 int executeMultDivMod(Node *multdivmodNode){
     Node *uopNode = multdivmodNode->firstChild;
-    int uop = executeUopNode(uopNode);
+    int uop = executeUop(uopNode);
 
     while(uopNode->rightSibling != NULL){
         uopNode = uopNode->rightSibling;
         if(uopNode->data.token.type == MULT_OP){
-            uop = uop * executeUopNode(uopNode);
+            uop = uop * executeUop(uopNode->rightSibling);
         }
         else if(uopNode->data.token.type == DIV_OP){
-            uop = uop / executeUopNode(uopNode);
+            uop = uop / executeUop(uopNode->rightSibling);
         }
         else if(uopNode->data.token.type == MOD_OP){
-            uop = uop % executeUopNode(uopNode);
+            uop = uop % executeUop(uopNode->rightSibling);
         }
         uopNode = uopNode->rightSibling;
     }
     return uop;
 }
 
-int executeUopNode(Node *uopNode){
+int executeUop(Node *uopNode){
+    Node *nextUopNode = uopNode->firstChild;
+    int uop;
+    if(nextUopNode->data.LHS == "<lit>"){
+        uop = executeLit(nextUopNode);
+    }
+    else{
+        if(nextUopNode->data.token.type == LOG_NOT){
+            uop = !executeUop(nextUopNode->rightSibling);
+        }
+        else if(nextUopNode->data.token.type == SUB_OP){
+            uop = -executeUop(nextUopNode->rightSibling);
+        }
+        else {
+            uop = ~executeUop(nextUopNode->rightSibling);
+        }
+    }
+    return uop;
+}
 
+int executeLit(Node *litNode){
+    Node *litChild = litNode->firstChild;
+    int lit;
+    if(litChild->data.LHS == "<variable>"){
+        lit = executeVar(litChild);
+    }
+    else if(litChild->data.token.type == INTEGER_CONSTANT ||
+            litChild->data.token.type == CHAR_CONSTANT){
+        lit = atoi(litChild->data.token.lexeme);
+    }
+    //It must be ( <exp> )
+    else{
+        lit = (executeExp(litChild->rightSibling));
+    }
+
+    return lit;
+}
+
+int executeVar(Node *varNode){
+    Node *identNode = varNode->firstChild;
+    if(!varInitialized(identNode)){
+        printf("Variable %s was not assigned a value!\n", identNode->data.token.lexeme);
+        exit(1);
+    }
+    int index = getSymbolInTable(identNode->data.token.lexeme)->offset;
+    return get(varArray, index);
 }
 
 /**
  * Ensures variable array has enough room for all symbols declared in file.
  * Initializes assignment array to keep track of which variables have been
  * assigned values.
- * Initial value in each slot of variable array will be set to NULL until a
+ * Initial value in each slot of variable array will be set to 0 until a
  * statement assigns a value to a variable.
  * Initial value in each slot of assignment array will be set to zero until
  * a statement assigns it a value.
@@ -243,7 +289,7 @@ void loadVarAndAssignArray(){
 
     int i;
     for(i = 0; i < symbolsInTable; i++){
-        add(varArray, NULL);
+        add(varArray, 0);
         add(assignArray, 0);
     }
 }
@@ -264,5 +310,14 @@ void scanToArrays(Node *identNode){
     }
     set(varArray, symbol->offset, var);
     set(assignArray, symbol->offset, 1);
+}
+
+_Bool varInitialized(Node *identNode){
+    Symbol *symbol = getSymbolInTable(identNode->data.token.lexeme);
+    int index = symbol->offset;
+    if(get(assignArray, index)){
+        return 1;
+    }
+    return 0;
 }
 
