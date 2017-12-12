@@ -1,11 +1,26 @@
 int x,y,z;
 int d;
+char c;
 
-cin>>x;
+cin>>c;
+cout<<c;
 
-if(x > 5){
-    cout << 1;
+if(c == 'Z'){
+    cout<<1;
 }
-else{
-    cout << 0;
+else
+    cout<<0;
+
+cin>>x>>y;
+
+z=x+2*y-7;
+
+d=z/(x+2*x);
+
+cout<<x<<y+3*z<<d-(x-2);
+while(y>0){
+z=x % y;
+x=y;
+y=z;
 }
+cout<<x;
