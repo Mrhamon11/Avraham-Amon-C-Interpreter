@@ -48,3 +48,13 @@ compares that variable to 'Z'. If the variable equals 'Z', a value of 1 will be 
 and 0 will be printed otherwise. The program then asks for two more int arguments since 
 the variables that these values will be stored in are ints. It will then do some calculations
 and print out three values. Read the code to see exactly what is going on. 
+
+If at any point, you are confused as to what the CFile.c is supposed to do, a folder
+called "C Version of Test Program" is included as a part of this project. In it are 
+two files: test.c has the C version of CFile.c, and test is the compiled executable 
+of that file. The only difference is that test.c is a C file, and thus requires 
+a main function, while this interpreter does not as it doesn't support subprograms.
+Feel free to recompile the test.c file to ensure that it really works the same as
+CFile.c does with this Interpreter.
+
+Note: CFile.c is not a C file despite the .c extension.

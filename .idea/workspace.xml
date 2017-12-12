@@ -16,10 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e11e2822-f0b6-418f-a2d5-434e4a17843d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/CFile.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/C Version of Test Program/test" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/C Version of Test Program/test.c" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CFile.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CFile.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,8 +74,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="882">
-                <caret line="49" column="74" lean-forward="false" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
+              <first_editor relative-caret-position="1062">
+                <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -207,6 +207,11 @@
             <path>
               <item name="Assignment_7___Complete_Interpreter" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Assignment 7 - Complete Interpreter" type="462c0819:PsiDirectoryNode" />
+              <item name="C Version of Test Program" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment_7___Complete_Interpreter" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Assignment 7 - Complete Interpreter" type="462c0819:PsiDirectoryNode" />
               <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -271,7 +276,7 @@
       <workItem from="1512699031973" duration="20857000" />
       <workItem from="1512751179057" duration="139000" />
       <workItem from="1513028247818" duration="8638000" />
-      <workItem from="1513038350302" duration="2828000" />
+      <workItem from="1513038350302" duration="3224000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;changed main.c to Interpreter.c&quot;">
       <created>1512606163301</created>
@@ -350,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513038047803</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="&quot;Updated README&quot;">
+      <created>1513061602938</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1513061602941</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52259000" />
+    <option name="totallyTimeSpent" value="52655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1089" y="-4" width="1855" height="1084" extended-state="6" />
@@ -398,7 +410,8 @@
     <MESSAGE value="&quot;added all execute function except assign and while&quot;" />
     <MESSAGE value="&quot;added assign and while executors. also updated tokenizer.&quot;" />
     <MESSAGE value="&quot;Added char in expressions and printing&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Added char in expressions and printing&quot;" />
+    <MESSAGE value="&quot;Updated README&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Updated README&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -424,14 +437,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FirstFinder.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CFile.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -867,6 +872,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/C Version of Test Program/test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CFile.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -878,8 +891,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="882">
-            <caret line="49" column="74" lean-forward="false" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
+          <first_editor relative-caret-position="1062">
+            <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
             <folding />
           </first_editor>
           <second_editor />
